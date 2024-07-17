@@ -103,10 +103,10 @@ export default function Home() {
             <Text
               as='h2'
               fontSize={'3xl'}
-              as='b'
+              
               color='white'
             >
-              Produtos
+             <b>Produtos</b> 
             </Text>
           </Container>
 
