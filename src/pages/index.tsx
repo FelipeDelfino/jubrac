@@ -7,6 +7,9 @@ import { Box, Button, Container, Divider, Flex, Grid as GridChakra, GridItem, He
 import { FaInstagram } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import Front from '../../public/f1.png'
+import Back from '../../public/file.png'
+
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -103,10 +106,10 @@ export default function Home() {
             <Text
               as='h2'
               fontSize={'3xl'}
-              
+
               color='white'
             >
-             <b>Produtos</b> 
+              <b>Produtos</b>
             </Text>
           </Container>
 
@@ -156,7 +159,8 @@ export default function Home() {
                           dynamicBullets: true,
                         }}
                         modules={[Pagination]}
-                        className="mySwiper"
+                        // className="mySwiper"
+                        style={{ backgroundColor: '', maxHeight:'65vh'}}
                       >
                         <SwiperSlide>
                           <Box
@@ -167,10 +171,12 @@ export default function Home() {
                             p={6}
                           >
                             <Image
-                              src='/back-camisa.png'
-                              width={500}
-                              height={100}
+                              src={Front}                             
+                              height={500}  
+                              width={300}                        
+                              priority={true}
                               quality={100}
+                              // layout="responsive"
                               alt='Camisa Front'
                             />
                           </Box>
@@ -185,11 +191,13 @@ export default function Home() {
                             p={6}
                           >
                             <Image
-                              src='/front-camisa.png'
-                              width={500}
-                              height={100}
+                              src={Back}                             
+                              height={500}  
+                              width={300}                        
+                              priority={true}
                               quality={100}
-                              alt='Camisa Front'
+                              // layout="responsive"
+                              alt='Camisa Back'
                             />
                           </Box>
                         </SwiperSlide>
