@@ -9,6 +9,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import Front from '../../public/f1.png'
 import Back from '../../public/file.png'
+import Logo from '../../public/obpc.png'
+
+import Nav from '../components/Nav'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -19,15 +22,12 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 
 
 export default function Home() {
   const [maxHeight, setMaxHeight] = useState<string>("100vh");
-  const handleInstagramClick = () => {
-    window.open('https://www.instagram.com/jubracadobrac_regionalitaqua/', '_blank')
-  };
 
   useLayoutEffect(() => {
     const updateMaxHeight = () => {
@@ -44,39 +44,77 @@ export default function Home() {
 
   return (
     <>
-      <Flex w='100vw' h='100vh' bg='#151515' direction='column'>
-        <Container bg='' minW='60vw'>
-          <Flex h='10vh' bg=''>
+      <Flex
+        w='100vw'
+        h='100vh'
+        bg='#151515'
+        direction='column'
+      >
+          <Nav/>
+        {/* <Container
+          minW='70vw'
+        // bg='pink'
+        >
+          <Flex
+            h='9vh'
+          // bg='tomato'
+          >
 
-            {/* <Box w='100%' bg='' h={75} bg='gray.800'> */}
-            <Box w='10vh' bg='' display='flex' alignItems='center' justifyContent='end'>
-              <Image src="/obpc.png" width={34} height={100} alt='obpc' />
-              {/* </Box>
-            <Box h='100%' w='12vh' bg='red'> */}
-
-              <Text fontSize='2xl' ml={2} color='white' h='100%' display='flex' alignItems='center' justifyContent='center'>
+            <Box
+              display='flex'
+              alignItems='center'
+              justifyContent='center'
+              // bg='yellow'
+              w='10vw'
+            >
+              <Image
+                src={Logo}
+                height={31}
+                width={31}
+                priority={true}
+                quality={100}
+                layout=""
+                alt="OBPC"
+              />
+              <Text
+                fontSize='2xl'
+                ml={2}
+                color='white'
+                h='100%'
+                display='flex'
+                alignItems='center'
+                justifyContent='center'
+              >
                 <b>JUBRAC</b>
               </Text>
             </Box>
-            {/* </Box> */}
-            {/* <Box w='100%' bg='' h={75} bg='gray.800'> */}
             <Spacer />
-            <HStack h='100%' bg='' display='flex' alignItems='center' justifyContent='center' gap={8}>
-
-
-              <Link fontSize='sm' color='gray' >
-                Sobre
+            <HStack
+              // bg='gray.700'
+              display='flex'
+              alignItems='center'
+              justifyContent='center'
+              gap={8}
+              w='15vw'
+            >
+              <Link fontSize='sm' color='gray.200' >
+                Inicio
               </Link>
-              <Link fontSize='sm' color='gray' >
+              <Link fontSize='sm' color='gray.200' >
                 Projetos
               </Link>
-              <Link fontSize='sm' color='gray' >
+              <Link fontSize='sm' color='gray.200' >
                 Produtos
               </Link>
             </HStack>
-            {/* </Box> */}
             <Spacer />
-            <Box w='10vh' display='flex' alignItems='center'>
+            <Box
+              w='10vw'
+              display='flex'
+              justifyContent='center'
+              alignItems='center'
+            // bg='red'
+            >
               <IconButton
                 onClick={handleInstagramClick}
                 aria-label='instagram'
@@ -91,22 +129,24 @@ export default function Home() {
               />
             </Box>
           </Flex>
-        </Container>
+        </Container> */}
 
-        <Flex h='90vh' direction='column'>
+        <Flex
+          h='90vh'
+          direction='column'
+          
+        >
           <Container
             bg=''
             w='100%'
             maxW='60vw'
             display='flex'
             alignItems='center'
-            justifyContent=''
             mb={6}
           >
             <Text
               as='h2'
               fontSize={'3xl'}
-
               color='white'
             >
               <b>Produtos</b>
@@ -115,44 +155,22 @@ export default function Home() {
 
           <Container
             maxW='65vw'
-            // bg='#0e0e0e'
-            // margin={6}
-            // border='1px'
-            // borderColor='gray'
             borderRadius={6}
           >
-            <Box h='' >
+            <Box>
               <GridChakra templateColumns='repeat(6, 1fr)' h='100%'>
                 <GridItem colSpan={4}>
-                  <HStack align='stretch' justify='center' h='100%' ml='' bg=''>
-                    {/* <Box>
-                      <VStack>
-                        <Box>
-                          <Image
-                            src='/front-camisa.jpeg'
-                            width={100}
-                            height={120}
-                            alt='Product Front'
-                          />
-                        </Box>
-                        <Box>
-                          <Image
-                            src='/back-camisa.jpeg'
-                            width={100}
-                            height={120}
-                            quality={100}
-                            alt='Product Front'
-                          />
-                        </Box>
-                      </VStack>
-                    </Box> */}
+                  <HStack
+                    align='stretch'
+                    justify='center'
+                    h='100%'
+                  >
                     <Box
                       // mt='12'
                       maxW='100%'
                       display='flex'
                       justifyContent='center'
                       alignItems='center'
-                      bg=''
                     >
                       <Swiper
                         pagination={{
@@ -160,20 +178,19 @@ export default function Home() {
                         }}
                         modules={[Pagination]}
                         // className="mySwiper"
-                        style={{ backgroundColor: '', maxHeight:'65vh'}}
+                        style={{ backgroundColor: '', maxHeight: '65vh' }}
                       >
                         <SwiperSlide>
                           <Box
                             display='flex'
                             justifyContent='center'
                             alignItems='center'
-                            bg=''
                             p={6}
                           >
                             <Image
-                              src={Front}                             
-                              height={500}  
-                              width={300}                        
+                              src={Front}
+                              height={500}
+                              width={300}
                               priority={true}
                               quality={100}
                               // layout="responsive"
@@ -187,13 +204,12 @@ export default function Home() {
                             display='flex'
                             justifyContent='center'
                             alignItems='center'
-                            bg=''
                             p={6}
                           >
                             <Image
-                              src={Back}                             
-                              height={500}  
-                              width={300}                        
+                              src={Back}
+                              height={500}
+                              width={300}
                               priority={true}
                               quality={100}
                               // layout="responsive"
@@ -202,14 +218,14 @@ export default function Home() {
                           </Box>
                         </SwiperSlide>
                       </Swiper>
-
                     </Box>
                   </HStack>
                 </GridItem>
                 <GridItem colSpan={2}>
                   <Box
                     h='100%'
-                    mt='12'
+                    mt=''
+                    // bg='blue'
                   >
                     <Box
                       w='100%'
@@ -219,12 +235,12 @@ export default function Home() {
                     >
                       <Stack spacing={4} mb='2'>
                         <Box>
-                          <Heading size='md' color='white'>
+                          <Heading size='md' fontWeight='900' color='white'>
                             Camiseta - E Todos Ficaram Cheios
                           </Heading>
                         </Box>
                         <Box>
-                          <Text fontSize='md' as='b' color='white'>
+                          <Text fontSize='md' fontWeight='400' color='white'>
                             R$45,00
                           </Text>
 
@@ -237,18 +253,7 @@ export default function Home() {
                       </Stack>
 
                     </Box>
-                    {/* <Box
-                      w='100%'
-                      h='100px'
-                      p='3'
-                      pt='16'
 
-                    > */}
-
-                    {/* <Box bg='gray.300'>
-                                    <Divider />
-                                    </Box> */}
-                    {/* </Box> */}
                   </Box>
                 </GridItem>
               </GridChakra>
